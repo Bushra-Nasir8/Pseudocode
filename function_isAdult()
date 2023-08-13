@@ -1,0 +1,51 @@
+......Problem..........
+
+You are designing a program that determines if a person is eligible to apply for a
+driving license or not based on their age. The main program contains an ‘if’ block that
+prints “Eligible” or “Not Eligible” according to the person’s age. The test statement
+uses a function called ‘isAdult()’ that takes the age of a person as its parameter and
+returns ‘True’ if the person’s age is greater than or equal to 18, and ‘False’ otherwise.
+Call your function inside your main program’s ‘if’ block’s test statement to determine
+which block (i.e., ‘if’ or ‘else’) should be executed.
+
+......Solution.........
+
+FUNCTION isAdult(age):
+
+	IF age > = 18 DO:
+	
+		VAR Output 
+		Output = "True"
+		RETURN Output
+	
+	ELSE DO:
+	
+		VAR Output 
+		Output = "False"
+		RETURN Output
+
+	
+	ENDIF 
+	
+ENDFUNCTION
+
+BEGIN
+
+	VAR age
+	VAR Criteria
+	
+	Print "Enter your age"
+	INPUT age
+    
+	Criteria = CALL isAdult(age)
+	
+    If  Criteria == "True" DO:
+	
+        Print "Eligible for driving license"
+		
+    Else DO:
+	
+        Print "Not Eligible for driving license"
+		
+	ENDIF
+END
