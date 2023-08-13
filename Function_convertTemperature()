@@ -1,0 +1,34 @@
+.......Problem........
+
+Create a temperature conversion function called ‘convertTemperature()’ that converts
+the temperature between degrees Celsius / Fahrenheit (or vice versa) as specified by
+the function’s parameters. Your function should take the following parameters:
+a. ‘tempDegrees’ – The temperature value to be converted.
+b. ‘outputUnit’ – The unit of the returned converted temperature. Can be ‘celsius’
+or ‘fahrenheit’.
+
+.......Solution.......
+
+FUNCTION convertTemperature(tempDegrees , outputUnit ) 
+
+	IF outputUnit == "Fahrenheit" DO:
+	
+		VAR Output 
+		
+		Output =  (9/5 x tempDegrees) + 32
+		RETURN Output
+	
+	ELSE IF outputUnit == "Celsius"
+	
+		VAR Output 
+		
+		Output =  (tempDegrees − 32) x 5/9
+		RETURN Output
+	
+	ELSE 
+		
+		PRINT "Incorrect Outputunit"
+		
+	ENDIF
+	
+ENDFUNCTION
