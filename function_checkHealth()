@@ -1,0 +1,33 @@
+........Problem........
+
+Create a BMI assessment function called ‘checkHealth()’ that takes the weight and
+height of an individual as its parameters and returns whether the individual is
+‘underweight’, ‘normal’, ‘overweight’ or ‘obese’.
+
+........Soution........
+
+FUNCTION checkHealth(weight, height):
+	
+	VAR bmi
+	bmi = weight / (height * height)
+    
+	IF bmi <18.5 DO:
+		
+		PRINT "underweight"
+		
+	ELSE IF bmi >= 18.5 AND bmi <= 24.9 DO:
+	
+		PRINT "Normal"
+		
+	ELSE IF bmi >=25 AND bmi <= 29.9 DO:
+	
+		PRINT "Overweight"
+		
+	ELSE DO:
+	
+		PRINT "Obese"
+	
+	ENDIF
+
+
+ENDFUNCTION
