@@ -1,0 +1,47 @@
+...........Problem.............
+Develop an algorithm that allows a taxi company to calculate how much a taxi fare
+should be. The algorithm should:
+a. Prompt the user to enter the journey distance in kilometers.
+i. The distance entered must be greater than zero.
+ii. The user should be made to re-enter the distance until the distance
+entered is valid.
+
+b. Prompt the user to enter the number of passengers (max 4 passengers are
+allowed). Re-enter passengers if > 4.
+c. Calculate the taxi fare by:
+i. Charging Rs. 100 for every passenger regardless of the distance
+ii. Charging a further Rs 50 for every kilometer regardless of how many
+passengers there are.
+d. Output the final taxi fare.
+..........Solution............
+BEGIN
+
+	VAR Dist
+	VAR Passenger
+	VAR Fare
+	
+	PRINT "Enter the journey distance cover in kilometers."
+	INPUT Dist
+	
+	PRINT "Enter the no of passanger Travel in the taxi"
+	INPUT Passenger
+	
+	WHILE Dist < 0 AND NOT(Passenger <=4 AND Passenger > 0)  DO:
+	
+	
+		PRINT "Re-enter the distance you cover"
+		PRINT "Re-enter the No of passenger"
+		PRINT "Enter the journey distance cover in kilometers."
+		INPUT Dist
+	
+		PRINT "Enter the no of passanger Travel in the taxi"
+		INPUT Passenger
+	
+	ENDWHILE
+	
+		Dist = Dist * 50
+		Passenger = passenger * 100
+		Fare = Dist + Passenger
+		PRINT " The fare for the taxi ride is:"
+		PRINT Fare
+END
