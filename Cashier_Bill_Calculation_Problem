@@ -1,0 +1,67 @@
+.......Problem.........
+You are designing a simple invoice generator that calculates the total final bill to be
+charged to a customer based on their purchases.
+The system recognizes each product using a 9 digit product ID that is also printed in
+its bar-code. These 9 digits will manually be entered by the cashier using a typing pad
+because bar-code scanners have not been installed yet.
+There are 5 products currently in store. Their bar-codes are:
+a. 789920429 - Sliced Bread (Rs. 160)
+b. 627222732 - Cookies (Rs. 20)
+c. 212443277 - Shoe Polish (Rs. 225)
+d. 857423893 - Frozen Burger Patties (Rs. 1600)
+e. 224166527 - Laundry Detergent (Rs. 2000)
+Design an algorithm that allows the cashier to add the products in a customer's
+
+shopping basket to the invoice. The cashier will enter the 9 digit product ID one-by-
+one. When the cashier enters the product ID, he/she will also enter the quantity of
+
+the product being sold. Every time a product and its quantity are added to the
+invoice, the system prompts the cashier to check if there are any more products.
+Depending on the answer, the system either adds more products or proceeds to
+calculate the final bill.
+..........Solution...........
+BEGIN
+	
+	VAR bar_code
+	VAR Quantity
+	INIT Output = 1
+	INIT TOTAL = 0
+
+	WHILE  Output == 1 DO:
+	
+		INPUT bar_code
+		INPUT Quantity
+	
+		IF bar_code == 789920429 DO:
+		
+			TOTAL = TOTAL + 160 * Quantity
+			
+		 ELSE IF bar_code == 627222732 DO:
+		 
+			TOTAL = TOTAL + 20 * Quantity
+			
+		 ELSE IF bar_code == 212443277 DO:
+			
+			TOTAL = TOTAL + 225 * Quantity
+			
+		 ELSE IF bar_code == 857423893 DO:
+			
+			TOTAL = TOTAL + 1600 * Quantity
+			
+		 ELSE IF bar_code == 224166527 DO:
+		 
+			TOTAL = TOTAL + 2000 * Quantity
+			
+		ELSE
+		
+			PRINT "Ivalid bar code; re-ente the barcode"
+		
+		ENDIF
+		
+		PRINT "Do you want to enter the other product  enter 1 for yes or 0 for no"
+		INPUT Output 
+	
+	ENDWHILE
+		PRINT " Total amount to pay is:"
+		PRINT TOTAL
+END
