@@ -1,0 +1,57 @@
+....Problem......
+Develop an algorithm that helps an ice cream seller in a hot country predict how
+many ice creams they are likely to sell on a particular day. Your algorithm should:
+a. Get the user to enter whether it is the weekend or a weekday.
+b. Get the user to enter the temperature forecast in degrees Celsius (they
+should enter a number between 20 and 45 inclusive; if the number falls
+outside of this range then they should be made to re-enter another number
+until they enter a valid temperature).
+Calculate the number of ice creams that are likely to be sold using the following
+information:
+c. 100 ice creams are likely to be sold if the temperature is between 20 and 30
+degrees inclusive.
+d. 150 ice creams are likely to be sold if the temperature is between 31 and 38
+degrees inclusive.
+e. 120 ice creams are likely to be sold if the temperature is higher than 38
+degrees.
+f. Double the estimate if it is a weekend.
+The output of your algorithm is the estimated number of ice creams that are likely to
+be sold.
+....Solution.......
+BEGIN
+	
+	VAR is_weekday
+	VAR Temperature
+	VAR Salesvolume
+	
+	PRINT "Enter the week day either weekday or weekend y/n"
+	INPUT is_weekday
+	
+	PRINT "Enter the tommorrow forcast  temperature between 20-45 in degree celisus"
+	INPUT Temperature
+	
+	WHILE Temperature < 20 OR Temperature > 45 DO:
+	
+		PRINT "invalid Input"
+		PRINT "Enter the tommorrow forcast  temperature between 20-45 in degree celisus"
+		INPUT Temperature
+	
+	ENDWHILE
+	
+	IF 
+		
+		Temperature >= 20 AND Temperature <= 30 DO:
+		Salesvolume = 100
+		ELSE IF Temperature>= 31 AND Temperature<= 38 DO:
+		Salesvolume = 150
+		ELSE IF Temperature > 38 DO:
+		Salesvolume = 120
+
+	ENDIF
+	
+	IF is_weekday!= True DO:
+	
+		PRINT Salesvolume = Salesvolume *2
+	ENDIF
+
+END
