@@ -1,0 +1,65 @@
+........Problem.........
+
+Create a time conversion function called ‘convertTime()’ that converts the time
+between 12 / 24 hour system as specified by the function’s parameters. Your function
+should take the following parameters:
+a. ‘Hours’ – The value of the hours digits.
+b. ‘Minutes’ – The value of the minutes digits.
+c. ‘outputSystem’ – A value of either 12 or 24 to signify what the output clock
+system should be.
+
+........Solution........
+FUNCTION convertTime( VAR Hours , VAR Minutes , VAR outputSystem , INIT meridian = "am"):
+	
+		IF  outputSystem == 12 DO:
+			
+			IF Hours > = 12 AND Hours < = 23 DO:
+			
+				IF Hours != 12 DO:
+				 
+				 Hours = Hours - 12
+				 
+				ENDIF
+				meridian = "pm"
+				
+				RETURN Hours, ":" , Minutes , meridian
+			
+			ELSE IF Hours < 12 AND Hours >= 0 DO:
+			
+				IF Hours = 0 DO:
+					Hours = Hours + 12
+				ENDIF
+				RETURN Hours, ":" , Minutes , meridian
+			
+			ELSE 
+				PRINT "Incorrect hours"
+			ENDIF
+	
+		ELSE IF outputSystem == 24 DO:
+				
+			IF meridian == "pm" AND Hours > 12 DO:
+				
+				Hours = Hours + 12
+				RETURN Hours , ":" , Minutes
+				
+			ELSE IF meridian == "am" AND Hours = 12 AND ( Minutes <= 59 OR Minutes >= 0 ) DO:
+			
+				Hours = 0
+				RETURN Hours , ":" , Minutes
+				
+			ELSE IF meridian == "am" AND Hours < 12 DO:
+				
+				RETURN Hours , ":" , Minutes
+				
+			ELSE DO:
+				PRINT "Incorrect hours"
+			
+			ENDIF
+			
+		ELSE
+			
+			PRINT "Enter the correct output system"
+		ENDIF
+		
+ENDFUNCTION
+
